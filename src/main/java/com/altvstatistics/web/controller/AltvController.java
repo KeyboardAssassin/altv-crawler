@@ -42,7 +42,7 @@ public class AltvController {
     }
 
 
-    @Scheduled(cron = "0 0/1 * * * *")
+    @Scheduled(cron = "0 0/5 * * * *")
     public void fetchDataScheduled() {
 
         try {
