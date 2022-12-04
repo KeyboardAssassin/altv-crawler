@@ -6,6 +6,7 @@ services:
       context: ../
       dockerfile: Dockerfile
     image: altv-cralwer:latest
+    restart: unless-stopped
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/sibaui
       - MANAGEMENT_INFLUX_METRICS_EXPORT_URI=http://influxdb:8086
@@ -23,6 +24,7 @@ services:
       - 5432
   influxdb:
     image: library/influxdb:1.1.1
+    restart: unless-stopped
     container_name: influxdb
     environment:
       - INFLUXDB_ADMIN_ENABLED=true
@@ -33,6 +35,7 @@ services:
       - 8086 # TCP
   grafana:
     image: grafana/grafana
+    restart: unless-stopped
     container_name: grafana
     ports:
       - 3000:3000
