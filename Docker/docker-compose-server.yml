@@ -1,5 +1,11 @@
 version: '3.1'
 services:
+  spring:
+    container_name: spring
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: altv-cralwer:latest
   postgresql:
     image: postgres
     restart: unless-stopped
