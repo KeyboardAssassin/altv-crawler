@@ -6,6 +6,9 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: altv-cralwer:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/sibaui
+      - MANAGEMENT_INFLUX_METRICS_EXPORT_URI= http://influxdb:8086
   postgresql:
     image: postgres
     restart: unless-stopped
