@@ -11,7 +11,7 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - 5432
   influxdb:
     image: library/influxdb:1.1.1
     container_name: influxdb
@@ -20,8 +20,8 @@ services:
     volumes:
     - influxdata:/var/lib/influxdb
     ports:
-      - 8083:8083 # Web
-      - 8086:8086 # TCP
+      - 8083 # Web
+      - 8086 # TCP
   grafana:
     image: grafana/grafana
     container_name: grafana
